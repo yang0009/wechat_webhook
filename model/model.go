@@ -13,6 +13,7 @@ type Notification struct {
 	CommonLabels      map[string]string `json:commonLabels`
 	CommonAnnotations map[string]string `json:commonAnnotations`
 	ExternalURL       string            `json:externalURL`
+	
 	Alerts            []Alert           `json:alerts`
 }
 

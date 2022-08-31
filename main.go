@@ -29,9 +29,10 @@ func main() {
 	router := gin.Default()
 	router.POST("/webhook", func(c *gin.Context) {
 		var notification model.Notification
-		err := c.BindJSON(&notification)
+		
+		err := c.ShouldBindJSON(&notification)
 		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			c.JSON(http.StatusBadRequest, gin.H{"code":200,"status":10001,"message":"数据格式异常!","data":nil})
 			return
 		}
 		c.JSON(http.StatusOK, gin.H{"message": " successful receive alert notification message!"})
@@ -45,5 +46,5 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"message": "send to wechat successful!"})
 
 	})
-	router.Run()
+	router.Run(":9877")
 }

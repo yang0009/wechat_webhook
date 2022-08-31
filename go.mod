@@ -1,4 +1,4 @@
-module alertmanagerwebhook
+module wechat_webhook
 
 go 1.18
 
