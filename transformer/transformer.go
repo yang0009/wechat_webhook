@@ -3,7 +3,7 @@ package transformer
 import (
 	"bytes"
 	"fmt"
-	"model"
+	"wechat_webhook/model"
 )
 
 func TransformToMarkdown(notification model.Notification) (markdown *model.WechatMarkdown, err error) {
@@ -11,7 +11,7 @@ func TransformToMarkdown(notification model.Notification) (markdown *model.Wecha
 	groupKey := notification.GroupKey
 	status := notification.Status
 
-	annotations := notification.CommonAnnotations
+	// annotations := notification.CommonAnnotations
 
 	var buffer bytes.Buffer
 

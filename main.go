@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
-	"model"
-	"notifier"
 	"net/http"
+	"wechat_webhook/model"
+	"wechat_webhook/notifier"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -37,10 +38,10 @@ func main() {
 		err = notifier.Send(notification, defaultRobot)
 
 		if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-	
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+
 		}
-	
+
 		c.JSON(http.StatusOK, gin.H{"message": "send to wechat successful!"})
 
 	})

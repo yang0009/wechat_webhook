@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"model"
-	"transformer"
+	"wechat_webhook/model"
+	"wechat_webhook/transformer"
 )
 
 func Send(notification model.Notification, wechatRobot string) (err error) {

@@ -2,9 +2,9 @@ package model
 
 import (
 	"time"
-	)
+)
 
-type Notification struct{
+type Notification struct {
 	Version           string            `json:"version"`
 	GroupKey          string            `json:"groupKey"`
 	Status            string            `json:"status"`
@@ -16,15 +16,14 @@ type Notification struct{
 	Alerts            []Alert           `json:alerts`
 }
 
-
-type Alert struct{
+type Alert struct {
 	Labels      map[string]string `json:"labels"`
 	Annotations map[string]string `json:annotations`
 	StartsAt    time.Time         `json:"startsAt"`
 	EndsAt      time.Time         `json:"endsAt"`
 }
 
-type At struct{
+type At struct {
 	AtMobiles []string `json:"atMobiles"`
 	IsAtAll   bool     `json:"isAtAll"`
 }
